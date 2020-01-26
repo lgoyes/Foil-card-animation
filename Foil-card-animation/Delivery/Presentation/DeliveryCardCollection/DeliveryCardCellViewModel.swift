@@ -9,7 +9,7 @@
 struct DeliveryCardCellViewModel {
     let sourceAddress: String
     let destinationAddress: String
-    let numberOfRequests: Int
-    let pedge: Int
+    let numberOfRequests: String
+    let pedge: String
     let weight: String
 }

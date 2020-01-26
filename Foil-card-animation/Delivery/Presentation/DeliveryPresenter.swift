@@ -11,8 +11,8 @@ final class DeliveryPresenter: BasePresenter<DeliveryViewType, DeliveryViewContr
     struct Constants {
         static let sourceAddress = "W 90th St. New York. 100225"
         static let destinationAddress = "E 30th St. New York 10016"
-        static let numberOfRequests = 2
-        static let pedge = 150
+        static let numberOfRequests = "2"
+        static let pedge = "150"
         static let weight = "light"
     }
     

@@ -18,4 +18,10 @@ extension DeliveryCardCell {
         stack.axis = .vertical
         return stack
     }
+    
+    func getDefaultHorizontalStack() -> UIStackView {
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        return stack
+    }
 }

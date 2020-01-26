@@ -15,7 +15,13 @@ protocol DeliveryCardCellType {
 final class DeliveryCardCell: UICollectionViewCell {
 
     static let reuseIdentifier = "DeliveryCardCellReuseIdentifier"
+    
+    struct Constants {
+        static let height: CGFloat = 120
+        static let mainStackVerticalSpacing: CGFloat = 10.0
+    }
 
+    // MARK: - Outlets
     lazy var sourceAddressLabel: UILabel = {
         return getDefaultLabel()
     }()
@@ -24,8 +30,32 @@ final class DeliveryCardCell: UICollectionViewCell {
         return getDefaultLabel()
     }()
 
+    lazy var requestsKPI: DeliveryBasicKPIView = {
+        return DeliveryBasicKPIView()
+    }()
+
+    lazy var pledgeKPI: DeliveryBasicKPIView = {
+        return DeliveryBasicKPIView()
+    }()
+
+    lazy var weightKPI: DeliveryBasicKPIView = {
+        return DeliveryBasicKPIView()
+    }()
+
+    // MARK: - StackViews
+    lazy var bottomStackView: UIStackView = {
+        let stack = getDefaultHorizontalStack()
+        stack.alignment = .center
+        stack.distribution = .fillEqually
+        return stack
+    }()
+
     lazy var mainStackView: UIStackView = {
-        return getDefaultVerticalStack()
+        let stack = getDefaultVerticalStack()
+        stack.alignment = .fill
+        stack.distribution = .equalSpacing
+        stack.spacing = Constants.mainStackVerticalSpacing
+        return stack
     }()
 
     // MARK: - Internal methods
@@ -38,6 +68,22 @@ final class DeliveryCardCell: UICollectionViewCell {
     func setupMainStack() {
         mainStackView.addArrangedSubview(sourceAddressLabel)
         mainStackView.addArrangedSubview(destinationAddressLabel)
+        mainStackView.addArrangedSubview(bottomStackView)
+    }
+
+    func setupBottomStack(requests: String, pledge: String, weight: String) {
+        requestsKPI.configure(with: "Requests", and: requests)
+        pledgeKPI.configure(with: "Pledge", and: requests)
+        weightKPI.configure(with: "Weight", and: weight)
+        
+        self.bottomStackView.addArrangedSubview(requestsKPI)
+        self.bottomStackView.addArrangedSubview(pledgeKPI)
+        self.bottomStackView.addArrangedSubview(weightKPI)
+        
+//        NSLayoutConstraint.activate([
+//            requestsKPI.widthAnchor.constraint(equalTo: pledgeKPI.widthAnchor, multiplier: 1.0),
+//            requestsKPI.widthAnchor.constraint(equalTo: weightKPI.widthAnchor, multiplier: 1.0)
+//        ])
     }
 
     func setupConstraints() {
@@ -67,6 +113,7 @@ final class DeliveryCardCell: UICollectionViewCell {
 extension DeliveryCardCell: DeliveryCardCellType {
     func configure(with model: DeliveryCardCellViewModel, and collectionView: UICollectionView) {
         self.setupTheme(with: collectionView)
+        self.setupBottomStack(requests: model.numberOfRequests, pledge: model.pedge, weight: model.weight)
         self.setupMainStack()
         self.setupConstraints()
         self.setupCellData(with: model)

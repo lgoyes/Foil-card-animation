@@ -50,7 +50,7 @@ final class DeliveryCardAdapter: NSObject, UICollectionViewDataSource, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.collectionView.frame.width - 20.0, height: 100.0)
+        return CGSize(width: self.collectionView.frame.width - 20.0, height: DeliveryCardCell.Constants.height)
     }
 }
 
