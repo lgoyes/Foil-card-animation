@@ -9,13 +9,13 @@
 import UIKit
 
 protocol DeliveryCardCellType {
-    func configure(with model: DeliveryCardCellViewModel)
+    func configure(with model: DeliveryCardCellViewModel, and collectionView: UICollectionView)
 }
 
 final class DeliveryCardCell: UICollectionViewCell {
-    
+
     static let reuseIdentifier = "DeliveryCardCellReuseIdentifier"
-    
+
     lazy var sourceAddressLabel: UILabel = {
         return getDefaultLabel()
     }()
@@ -58,15 +58,15 @@ final class DeliveryCardCell: UICollectionViewCell {
     func set(destinationAddress: String) {
         self.destinationAddressLabel.text = destinationAddress
     }
-    
-    func setupTheme() {
+
+    func setupTheme(with collectionView: UICollectionView) {
         self.backgroundColor = .red
     }
 }
 
 extension DeliveryCardCell: DeliveryCardCellType {
-    func configure(with model: DeliveryCardCellViewModel) {
-        self.setupTheme()
+    func configure(with model: DeliveryCardCellViewModel, and collectionView: UICollectionView) {
+        self.setupTheme(with: collectionView)
         self.setupMainStack()
         self.setupConstraints()
         self.setupCellData(with: model)

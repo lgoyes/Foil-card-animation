@@ -14,7 +14,7 @@ protocol DeliveryCardAdapterManageable {
     func attach(collectionView: UICollectionView)
 }
 
-final class DeliveryCardAdapter: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
+final class DeliveryCardAdapter: NSObject, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     private struct Constants {
         static let numberOfSections = 1
@@ -40,13 +40,17 @@ final class DeliveryCardAdapter: NSObject, UICollectionViewDataSource, UICollect
             fatalError("Impossible to dequeue a DeliveryCardCell")
         }
 
-        cell.configure(with: data[indexPath.row])
+        cell.configure(with: data[indexPath.row], and: collectionView)
 
         return cell
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return Constants.numberOfSections
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: self.collectionView.frame.width - 20.0, height: 100.0)
     }
 }
 

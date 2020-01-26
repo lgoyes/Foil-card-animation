@@ -28,6 +28,6 @@ final class DeliveryPresenter: BasePresenter<DeliveryViewType, DeliveryViewContr
             numberOfRequests: Constants.numberOfRequests,
             pedge: Constants.pedge,
             weight: Constants.weight)
-        self.view.set(items: [DeliveryCardCellViewModel].init(repeating: item, count: 10))
+        self.view.set(items: [DeliveryCardCellViewModel].init(repeating: item, count: 20))
     }
 }

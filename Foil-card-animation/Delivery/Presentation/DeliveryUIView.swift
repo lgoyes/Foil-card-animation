@@ -10,14 +10,14 @@ import UIKit
 
 final class DeliveryUIView: UIView {
 
-    lazy var viewLayout: UICollectionViewFlowLayout = {
+    lazy var collectionViewLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         return layout
     }()
 
     lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.viewLayout)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.collectionViewLayout)
         collectionView.backgroundColor = .yellow
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
