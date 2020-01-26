@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9BDFC42523DDFC3300527A22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDFC42423DDFC3300527A22 /* AppDelegate.swift */; };
+		9BDFC42723DDFC3300527A22 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDFC42623DDFC3300527A22 /* SceneDelegate.swift */; };
+		9BDFC42923DDFC3300527A22 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDFC42823DDFC3300527A22 /* ViewController.swift */; };
+		9BDFC42C23DDFC3300527A22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BDFC42A23DDFC3300527A22 /* Main.storyboard */; };
+		9BDFC42E23DDFC3400527A22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BDFC42D23DDFC3400527A22 /* Assets.xcassets */; };
+		9BDFC43123DDFC3400527A22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BDFC42F23DDFC3400527A22 /* LaunchScreen.storyboard */; };
+		9BDFC43C23DDFC3400527A22 /* Foil_card_animationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDFC43B23DDFC3400527A22 /* Foil_card_animationTests.swift */; };
+		9BDFC44723DDFC3400527A22 /* Foil_card_animationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDFC44623DDFC3400527A22 /* Foil_card_animationUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9BDFC43823DDFC3400527A22 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9BDFC41923DDFC3300527A22 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9BDFC42023DDFC3300527A22;
+			remoteInfo = "Foil-card-animation";
+		};
+		9BDFC44323DDFC3400527A22 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9BDFC41923DDFC3300527A22 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9BDFC42023DDFC3300527A22;
+			remoteInfo = "Foil-card-animation";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9BDFC42123DDFC3300527A22 /* Foil-card-animation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Foil-card-animation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BDFC42423DDFC3300527A22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9BDFC42623DDFC3300527A22 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9BDFC42823DDFC3300527A22 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9BDFC42B23DDFC3300527A22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9BDFC42D23DDFC3400527A22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9BDFC43023DDFC3400527A22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9BDFC43223DDFC3400527A22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BDFC43723DDFC3400527A22 /* Foil-card-animationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Foil-card-animationTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BDFC43B23DDFC3400527A22 /* Foil_card_animationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foil_card_animationTests.swift; sourceTree = "<group>"; };
+		9BDFC43D23DDFC3400527A22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BDFC44223DDFC3400527A22 /* Foil-card-animationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Foil-card-animationUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BDFC44623DDFC3400527A22 /* Foil_card_animationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foil_card_animationUITests.swift; sourceTree = "<group>"; };
+		9BDFC44823DDFC3400527A22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9BDFC41E23DDFC3300527A22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BDFC43423DDFC3400527A22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BDFC43F23DDFC3400527A22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9BDFC41823DDFC3300527A22 = {
+			isa = PBXGroup;
+			children = (
+				9BDFC42323DDFC3300527A22 /* Foil-card-animation */,
+				9BDFC43A23DDFC3400527A22 /* Foil-card-animationTests */,
+				9BDFC44523DDFC3400527A22 /* Foil-card-animationUITests */,
+				9BDFC42223DDFC3300527A22 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9BDFC42223DDFC3300527A22 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9BDFC42123DDFC3300527A22 /* Foil-card-animation.app */,
+				9BDFC43723DDFC3400527A22 /* Foil-card-animationTests.xctest */,
+				9BDFC44223DDFC3400527A22 /* Foil-card-animationUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9BDFC42323DDFC3300527A22 /* Foil-card-animation */ = {
+			isa = PBXGroup;
+			children = (
+				9BDFC42423DDFC3300527A22 /* AppDelegate.swift */,
+				9BDFC42623DDFC3300527A22 /* SceneDelegate.swift */,
+				9BDFC42823DDFC3300527A22 /* ViewController.swift */,
+				9BDFC42A23DDFC3300527A22 /* Main.storyboard */,
+				9BDFC42D23DDFC3400527A22 /* Assets.xcassets */,
+				9BDFC42F23DDFC3400527A22 /* LaunchScreen.storyboard */,
+				9BDFC43223DDFC3400527A22 /* Info.plist */,
+			);
+			path = "Foil-card-animation";
+			sourceTree = "<group>";
+		};
+		9BDFC43A23DDFC3400527A22 /* Foil-card-animationTests */ = {
+			isa = PBXGroup;
+			children = (
+				9BDFC43B23DDFC3400527A22 /* Foil_card_animationTests.swift */,
+				9BDFC43D23DDFC3400527A22 /* Info.plist */,
+			);
+			path = "Foil-card-animationTests";
+			sourceTree = "<group>";
+		};
+		9BDFC44523DDFC3400527A22 /* Foil-card-animationUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9BDFC44623DDFC3400527A22 /* Foil_card_animationUITests.swift */,
+				9BDFC44823DDFC3400527A22 /* Info.plist */,
+			);
+			path = "Foil-card-animationUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9BDFC42023DDFC3300527A22 /* Foil-card-animation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BDFC44B23DDFC3400527A22 /* Build configuration list for PBXNativeTarget "Foil-card-animation" */;
+			buildPhases = (
+				9BDFC41D23DDFC3300527A22 /* Sources */,
+				9BDFC41E23DDFC3300527A22 /* Frameworks */,
+				9BDFC41F23DDFC3300527A22 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Foil-card-animation";
+			productName = "Foil-card-animation";
+			productReference = 9BDFC42123DDFC3300527A22 /* Foil-card-animation.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9BDFC43623DDFC3400527A22 /* Foil-card-animationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BDFC44E23DDFC3400527A22 /* Build configuration list for PBXNativeTarget "Foil-card-animationTests" */;
+			buildPhases = (
+				9BDFC43323DDFC3400527A22 /* Sources */,
+				9BDFC43423DDFC3400527A22 /* Frameworks */,
+				9BDFC43523DDFC3400527A22 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9BDFC43923DDFC3400527A22 /* PBXTargetDependency */,
+			);
+			name = "Foil-card-animationTests";
+			productName = "Foil-card-animationTests";
+			productReference = 9BDFC43723DDFC3400527A22 /* Foil-card-animationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9BDFC44123DDFC3400527A22 /* Foil-card-animationUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BDFC45123DDFC3400527A22 /* Build configuration list for PBXNativeTarget "Foil-card-animationUITests" */;
+			buildPhases = (
+				9BDFC43E23DDFC3400527A22 /* Sources */,
+				9BDFC43F23DDFC3400527A22 /* Frameworks */,
+				9BDFC44023DDFC3400527A22 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9BDFC44423DDFC3400527A22 /* PBXTargetDependency */,
+			);
+			name = "Foil-card-animationUITests";
+			productName = "Foil-card-animationUITests";
+			productReference = 9BDFC44223DDFC3400527A22 /* Foil-card-animationUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9BDFC41923DDFC3300527A22 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Luis David Goyes Garces";
+				TargetAttributes = {
+					9BDFC42023DDFC3300527A22 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					9BDFC43623DDFC3400527A22 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 9BDFC42023DDFC3300527A22;
+					};
+					9BDFC44123DDFC3400527A22 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 9BDFC42023DDFC3300527A22;
+					};
+				};
+			};
+			buildConfigurationList = 9BDFC41C23DDFC3300527A22 /* Build configuration list for PBXProject "Foil-card-animation" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9BDFC41823DDFC3300527A22;
+			productRefGroup = 9BDFC42223DDFC3300527A22 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9BDFC42023DDFC3300527A22 /* Foil-card-animation */,
+				9BDFC43623DDFC3400527A22 /* Foil-card-animationTests */,
+				9BDFC44123DDFC3400527A22 /* Foil-card-animationUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9BDFC41F23DDFC3300527A22 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BDFC43123DDFC3400527A22 /* LaunchScreen.storyboard in Resources */,
+				9BDFC42E23DDFC3400527A22 /* Assets.xcassets in Resources */,
+				9BDFC42C23DDFC3300527A22 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BDFC43523DDFC3400527A22 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BDFC44023DDFC3400527A22 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9BDFC41D23DDFC3300527A22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BDFC42923DDFC3300527A22 /* ViewController.swift in Sources */,
+				9BDFC42523DDFC3300527A22 /* AppDelegate.swift in Sources */,
+				9BDFC42723DDFC3300527A22 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BDFC43323DDFC3400527A22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BDFC43C23DDFC3400527A22 /* Foil_card_animationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BDFC43E23DDFC3400527A22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BDFC44723DDFC3400527A22 /* Foil_card_animationUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9BDFC43923DDFC3400527A22 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9BDFC42023DDFC3300527A22 /* Foil-card-animation */;
+			targetProxy = 9BDFC43823DDFC3400527A22 /* PBXContainerItemProxy */;
+		};
+		9BDFC44423DDFC3400527A22 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9BDFC42023DDFC3300527A22 /* Foil-card-animation */;
+			targetProxy = 9BDFC44323DDFC3400527A22 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9BDFC42A23DDFC3300527A22 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BDFC42B23DDFC3300527A22 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9BDFC42F23DDFC3400527A22 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BDFC43023DDFC3400527A22 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9BDFC44923DDFC3400527A22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9BDFC44A23DDFC3400527A22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9BDFC44C23DDFC3400527A22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8SNDXXC32G;
+				INFOPLIST_FILE = "Foil-card-animation/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ldgoyes.Foil-card-animation";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		9BDFC44D23DDFC3400527A22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8SNDXXC32G;
+				INFOPLIST_FILE = "Foil-card-animation/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ldgoyes.Foil-card-animation";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		9BDFC44F23DDFC3400527A22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8SNDXXC32G;
+				INFOPLIST_FILE = "Foil-card-animationTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ldgoyes.Foil-card-animationTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Foil-card-animation.app/Foil-card-animation";
+			};
+			name = Debug;
+		};
+		9BDFC45023DDFC3400527A22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8SNDXXC32G;
+				INFOPLIST_FILE = "Foil-card-animationTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ldgoyes.Foil-card-animationTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Foil-card-animation.app/Foil-card-animation";
+			};
+			name = Release;
+		};
+		9BDFC45223DDFC3400527A22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8SNDXXC32G;
+				INFOPLIST_FILE = "Foil-card-animationUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ldgoyes.Foil-card-animationUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Foil-card-animation";
+			};
+			name = Debug;
+		};
+		9BDFC45323DDFC3400527A22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8SNDXXC32G;
+				INFOPLIST_FILE = "Foil-card-animationUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ldgoyes.Foil-card-animationUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Foil-card-animation";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9BDFC41C23DDFC3300527A22 /* Build configuration list for PBXProject "Foil-card-animation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BDFC44923DDFC3400527A22 /* Debug */,
+				9BDFC44A23DDFC3400527A22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BDFC44B23DDFC3400527A22 /* Build configuration list for PBXNativeTarget "Foil-card-animation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BDFC44C23DDFC3400527A22 /* Debug */,
+				9BDFC44D23DDFC3400527A22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BDFC44E23DDFC3400527A22 /* Build configuration list for PBXNativeTarget "Foil-card-animationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BDFC44F23DDFC3400527A22 /* Debug */,
+				9BDFC45023DDFC3400527A22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BDFC45123DDFC3400527A22 /* Build configuration list for PBXNativeTarget "Foil-card-animationUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BDFC45223DDFC3400527A22 /* Debug */,
+				9BDFC45323DDFC3400527A22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9BDFC41923DDFC3300527A22 /* Project object */;
+}
