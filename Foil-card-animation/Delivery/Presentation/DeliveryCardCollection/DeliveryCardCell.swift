@@ -22,12 +22,12 @@ final class DeliveryCardCell: UICollectionViewCell {
     }
 
     // MARK: - Outlets
-    lazy var sourceAddressLabel: UILabel = {
-        return getDefaultLabel()
+    lazy var sourceAddressView: DeliveryBasicAddressView = {
+        return DeliveryBasicAddressView()
     }()
-
-    lazy var destinationAddressLabel: UILabel = {
-        return getDefaultLabel()
+    
+    lazy var destinationAddressView: DeliveryBasicAddressView = {
+        return DeliveryBasicAddressView()
     }()
 
     lazy var requestsKPI: DeliveryBasicKPIView = {
@@ -66,8 +66,8 @@ final class DeliveryCardCell: UICollectionViewCell {
     }
 
     func setupMainStack() {
-        mainStackView.addArrangedSubview(sourceAddressLabel)
-        mainStackView.addArrangedSubview(destinationAddressLabel)
+        mainStackView.addArrangedSubview(sourceAddressView)
+        mainStackView.addArrangedSubview(destinationAddressView)
         mainStackView.addArrangedSubview(bottomStackView)
     }
 
@@ -79,11 +79,6 @@ final class DeliveryCardCell: UICollectionViewCell {
         self.bottomStackView.addArrangedSubview(requestsKPI)
         self.bottomStackView.addArrangedSubview(pledgeKPI)
         self.bottomStackView.addArrangedSubview(weightKPI)
-        
-//        NSLayoutConstraint.activate([
-//            requestsKPI.widthAnchor.constraint(equalTo: pledgeKPI.widthAnchor, multiplier: 1.0),
-//            requestsKPI.widthAnchor.constraint(equalTo: weightKPI.widthAnchor, multiplier: 1.0)
-//        ])
     }
 
     func setupConstraints() {
@@ -98,11 +93,11 @@ final class DeliveryCardCell: UICollectionViewCell {
     }
 
     func set(sourceAddress: String) {
-        self.sourceAddressLabel.text = sourceAddress
+        self.sourceAddressView.configure(with: sourceAddress)
     }
 
     func set(destinationAddress: String) {
-        self.destinationAddressLabel.text = destinationAddress
+        self.destinationAddressView.configure(with: destinationAddress)
     }
 
     func setupTheme(with collectionView: UICollectionView) {
