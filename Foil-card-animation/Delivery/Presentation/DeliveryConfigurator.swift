@@ -14,6 +14,7 @@ final class DeliveryConfigurator {
         let presenter = DeliveryPresenter()
         
         let viewController = DeliveryViewController(presenter: presenter)
+        viewController.title = PresentationConstants.Delivery.title
         
         return viewController
     }

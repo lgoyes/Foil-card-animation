@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B20EE0423DE22D700C69C97 /* PresentationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B20EE0323DE22D700C69C97 /* PresentationConstants.swift */; };
+		9B20EE0623DE242300C69C97 /* DeliveryCardCell+Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B20EE0523DE242200C69C97 /* DeliveryCardCell+Builder.swift */; };
+		9B20EE0823DE25DD00C69C97 /* DeliveryCardCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B20EE0723DE25DD00C69C97 /* DeliveryCardCellViewModel.swift */; };
+		9B20EE0A23DE276400C69C97 /* DeliveryCardAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B20EE0923DE276400C69C97 /* DeliveryCardAdapter.swift */; };
 		9B260BB823DE04D500CE02E2 /* DeliveryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B260BB723DE04D500CE02E2 /* DeliveryPresenter.swift */; };
 		9B260BBB23DE04E600CE02E2 /* DeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B260BBA23DE04E600CE02E2 /* DeliveryViewController.swift */; };
 		9B260BBD23DE04EE00CE02E2 /* DeliveryConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B260BBC23DE04EE00CE02E2 /* DeliveryConfigurator.swift */; };
@@ -16,6 +20,7 @@
 		9B260BC623DE067600CE02E2 /* DeliveryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B260BC523DE067600CE02E2 /* DeliveryCoordinator.swift */; };
 		9BC883F523DE076100CE418D /* DeliveryUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC883F423DE076100CE418D /* DeliveryUIView.swift */; };
 		9BC883F723DE082200CE418D /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC883F623DE082200CE418D /* BaseCoordinator.swift */; };
+		9BC883FA23DE0B1400CE418D /* DeliveryCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC883F923DE0B1400CE418D /* DeliveryCardCell.swift */; };
 		9BDFC42523DDFC3300527A22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDFC42423DDFC3300527A22 /* AppDelegate.swift */; };
 		9BDFC42723DDFC3300527A22 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDFC42623DDFC3300527A22 /* SceneDelegate.swift */; };
 		9BDFC42923DDFC3300527A22 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDFC42823DDFC3300527A22 /* ViewController.swift */; };
@@ -43,6 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B20EE0323DE22D700C69C97 /* PresentationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationConstants.swift; sourceTree = "<group>"; };
+		9B20EE0523DE242200C69C97 /* DeliveryCardCell+Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeliveryCardCell+Builder.swift"; sourceTree = "<group>"; };
+		9B20EE0723DE25DD00C69C97 /* DeliveryCardCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryCardCellViewModel.swift; sourceTree = "<group>"; };
+		9B20EE0923DE276400C69C97 /* DeliveryCardAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryCardAdapter.swift; sourceTree = "<group>"; };
 		9B260BB723DE04D500CE02E2 /* DeliveryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryPresenter.swift; sourceTree = "<group>"; };
 		9B260BBA23DE04E600CE02E2 /* DeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewController.swift; sourceTree = "<group>"; };
 		9B260BBC23DE04EE00CE02E2 /* DeliveryConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryConfigurator.swift; sourceTree = "<group>"; };
@@ -52,6 +61,7 @@
 		9B260BC523DE067600CE02E2 /* DeliveryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryCoordinator.swift; sourceTree = "<group>"; };
 		9BC883F423DE076100CE418D /* DeliveryUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryUIView.swift; sourceTree = "<group>"; };
 		9BC883F623DE082200CE418D /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		9BC883F923DE0B1400CE418D /* DeliveryCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryCardCell.swift; sourceTree = "<group>"; };
 		9BDFC42123DDFC3300527A22 /* Foil-card-animation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Foil-card-animation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BDFC42423DDFC3300527A22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BDFC42623DDFC3300527A22 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,9 +102,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B20EE0223DE22BE00C69C97 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9B20EE0323DE22D700C69C97 /* PresentationConstants.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		9B20EE0B23DE2BAE00C69C97 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		9B20EE0C23DE2BB300C69C97 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		9B260BB623DE04A400CE02E2 /* Delivery */ = {
 			isa = PBXGroup;
 			children = (
+				9B20EE0C23DE2BB300C69C97 /* Data */,
+				9B20EE0B23DE2BAE00C69C97 /* Domain */,
 				9B260BB923DE04DA00CE02E2 /* Presentation */,
 			);
 			path = Delivery;
@@ -103,6 +137,7 @@
 		9B260BB923DE04DA00CE02E2 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				9BC883F823DE0B0300CE418D /* DeliveryCardCollection */,
 				9B260BBC23DE04EE00CE02E2 /* DeliveryConfigurator.swift */,
 				9B260BBE23DE04F500CE02E2 /* DeliveryContract.swift */,
 				9B260BB723DE04D500CE02E2 /* DeliveryPresenter.swift */,
@@ -121,6 +156,17 @@
 				9BC883F623DE082200CE418D /* BaseCoordinator.swift */,
 			);
 			path = BaseArchitecture;
+			sourceTree = "<group>";
+		};
+		9BC883F823DE0B0300CE418D /* DeliveryCardCollection */ = {
+			isa = PBXGroup;
+			children = (
+				9BC883F923DE0B1400CE418D /* DeliveryCardCell.swift */,
+				9B20EE0523DE242200C69C97 /* DeliveryCardCell+Builder.swift */,
+				9B20EE0723DE25DD00C69C97 /* DeliveryCardCellViewModel.swift */,
+				9B20EE0923DE276400C69C97 /* DeliveryCardAdapter.swift */,
+			);
+			path = DeliveryCardCollection;
 			sourceTree = "<group>";
 		};
 		9BDFC41823DDFC3300527A22 = {
@@ -146,6 +192,7 @@
 		9BDFC42323DDFC3300527A22 /* Foil-card-animation */ = {
 			isa = PBXGroup;
 			children = (
+				9B20EE0223DE22BE00C69C97 /* Common */,
 				9B260BC023DE053700CE02E2 /* BaseArchitecture */,
 				9B260BB623DE04A400CE02E2 /* Delivery */,
 				9BDFC42423DDFC3300527A22 /* AppDelegate.swift */,
@@ -314,9 +361,14 @@
 				9B260BB823DE04D500CE02E2 /* DeliveryPresenter.swift in Sources */,
 				9BC883F523DE076100CE418D /* DeliveryUIView.swift in Sources */,
 				9BC883F723DE082200CE418D /* BaseCoordinator.swift in Sources */,
+				9B20EE0823DE25DD00C69C97 /* DeliveryCardCellViewModel.swift in Sources */,
 				9B260BBD23DE04EE00CE02E2 /* DeliveryConfigurator.swift in Sources */,
 				9B260BC223DE054A00CE02E2 /* BaseViewController.swift in Sources */,
+				9B20EE0623DE242300C69C97 /* DeliveryCardCell+Builder.swift in Sources */,
 				9BDFC42723DDFC3300527A22 /* SceneDelegate.swift in Sources */,
+				9B20EE0423DE22D700C69C97 /* PresentationConstants.swift in Sources */,
+				9BC883FA23DE0B1400CE418D /* DeliveryCardCell.swift in Sources */,
+				9B20EE0A23DE276400C69C97 /* DeliveryCardAdapter.swift in Sources */,
 				9B260BBF23DE04F500CE02E2 /* DeliveryContract.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

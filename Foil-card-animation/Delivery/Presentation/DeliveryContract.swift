@@ -7,11 +7,12 @@
 //
 
 protocol DeliveryUIViewType: AnyObject {
-    
+    func set(adapter: DeliveryCardAdapter)
+    func configure()
 }
 
 protocol DeliveryViewType: BaseViewType {
-
+    func set(items: [DeliveryCardCellViewModel])
 }
 
 protocol DeliveryPresenterType: BasePresenterType {
