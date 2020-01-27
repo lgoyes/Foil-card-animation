@@ -92,6 +92,14 @@ final class DeliveryCardCell: UICollectionViewCell {
         stackView.spacing = 10.0
         return stackView
     }()
+    
+    // MARK: - Container
+    
+    lazy var containerView: UIView = {
+        let view = UIView()
+        
+        return view
+    }()
 
     // MARK: - Internal methods
 
@@ -134,14 +142,30 @@ final class DeliveryCardCell: UICollectionViewCell {
     }
 
     func setupConstraints() {
-        self.addSubview(mainStackView)
+        containerView.addSubview(mainStackView)
         mainStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            mainStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
-            mainStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
-            mainStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
-            mainStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0)
+            mainStackView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 0),
+            mainStackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 0),
+            mainStackView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 0),
+            mainStackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: 0)
             ])
+    }
+    
+    func setupContainer() {
+        self.addSubview(containerView)
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            containerView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+            containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
+            containerView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
+            containerView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0)
+            ])
+        
+        containerView.layer.cornerRadius = 20.0
+        containerView.layer.borderWidth = 1.0
+        containerView.layer.borderColor = UIColor.clear.cgColor
+        containerView.layer.masksToBounds = true
     }
 
     func set(sourceAddress: String) {
@@ -153,7 +177,7 @@ final class DeliveryCardCell: UICollectionViewCell {
     }
 
     func setupTheme() {
-        self.backgroundColor = .yellow
+        self.containerView.backgroundColor = .orange
         self.deadlineKPI.backgroundColor = .red
         self.indexLabel.backgroundColor = .red
     }
@@ -181,6 +205,7 @@ final class DeliveryCardCell: UICollectionViewCell {
 
 extension DeliveryCardCell: DeliveryCardCellType {
     func configure(with model: DeliveryCardCellViewModel, index: Int, and collectionView: UICollectionView) {
+        self.setupContainer()
         self.setupMainStack()
         self.setupConstraints()
         self.setupCellData(with: model, and: index)

@@ -10,18 +10,13 @@ import UIKit
 
 extension UIImage {
     class func circle(diameter: CGFloat, color: UIColor) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(CGSize(width: diameter, height: diameter), false, 0)
-        let ctx = UIGraphicsGetCurrentContext()!
-        ctx.saveGState()
-
-        let rect = CGRect(x: 0, y: 0, width: diameter, height: diameter)
-        ctx.setFillColor(color.cgColor)
-        ctx.fillEllipse(in: rect)
-
-        ctx.restoreGState()
-        let img = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-
-        return img
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: diameter, height: diameter))
+        let image = renderer.image { (context) in
+            context.cgContext.setStrokeColor(color.cgColor)
+            context.cgContext.setLineWidth(1)
+            context.cgContext.addArc(center: CGPoint(x: diameter/2, y: diameter/2), radius: diameter/2, startAngle: 0, endAngle: 2*CGFloat.pi, clockwise: true)
+            context.cgContext.drawPath(using: .stroke)
+        }
+        return image
     }
 }

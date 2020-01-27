@@ -13,6 +13,11 @@ protocol DeliveryBasicAddressViewType {
 }
 
 final class DeliveryBasicAddressView: UIView {
+    
+    struct Constants {
+        static let bulletDiameter: CGFloat = 7.0
+    }
+    
     // MARK: Outlets
     lazy var addressLabel: UILabel = {
         let label = UILabel()
@@ -23,8 +28,8 @@ final class DeliveryBasicAddressView: UIView {
     lazy var widgetImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage.circle(diameter: 10.0, color: .blue)
-        imageView.widthAnchor.constraint(equalToConstant: 10).isActive = true
+        imageView.image = UIImage.circle(diameter: Constants.bulletDiameter, color: .blue)
+        imageView.widthAnchor.constraint(equalToConstant: Constants.bulletDiameter).isActive = true
         return imageView
     }()
 
