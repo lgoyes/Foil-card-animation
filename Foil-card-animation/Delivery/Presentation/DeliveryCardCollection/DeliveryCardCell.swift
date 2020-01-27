@@ -47,13 +47,17 @@ final class DeliveryCardCell: UICollectionViewCell {
     }()
 
     lazy var deadlineKPI: DeliveryBasicKPIView = {
-        return DeliveryBasicKPIView()
+        let kpi = DeliveryBasicKPIView()
+        kpi.titleLabel.textColor = .white
+        kpi.valueLabel.textColor = .white
+        return kpi
     }()
 
     lazy var indexLabel: UILabel = {
         let label = getDefaultLabel()
         label.textAlignment = .center
-        label.backgroundColor = .blue
+        label.font = label.font.withSize(25.0)
+        label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -177,9 +181,18 @@ final class DeliveryCardCell: UICollectionViewCell {
     }
 
     func setupTheme() {
-        self.containerView.backgroundColor = .orange
-        self.deadlineKPI.backgroundColor = .red
-        self.indexLabel.backgroundColor = .red
+        self.containerView.backgroundColor = .white
+        
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor(rgb: PresentationConstants.Delivery.accentColor)
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.insertSubview(backgroundView, at: 0)
+        NSLayoutConstraint.activate([
+            backgroundView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            backgroundView.topAnchor.constraint(equalTo: containerView.topAnchor),
+            backgroundView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+            backgroundView.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.25)
+        ])
     }
 
     func getDateText(from date: Date) -> String {

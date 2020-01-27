@@ -21,6 +21,7 @@
 		9B260BC423DE055B00CE02E2 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B260BC323DE055B00CE02E2 /* BasePresenter.swift */; };
 		9B260BC623DE067600CE02E2 /* DeliveryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B260BC523DE067600CE02E2 /* DeliveryCoordinator.swift */; };
 		9BC28EE023DE756700B80D3F /* UIImage+Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC28EDF23DE756700B80D3F /* UIImage+Circle.swift */; };
+		9BC28EE223DE7D9B00B80D3F /* UIColor+HexInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC28EE123DE7D9B00B80D3F /* UIColor+HexInit.swift */; };
 		9BC883F523DE076100CE418D /* DeliveryUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC883F423DE076100CE418D /* DeliveryUIView.swift */; };
 		9BC883F723DE082200CE418D /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC883F623DE082200CE418D /* BaseCoordinator.swift */; };
 		9BC883FA23DE0B1400CE418D /* DeliveryCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC883F923DE0B1400CE418D /* DeliveryCardCell.swift */; };
@@ -65,6 +66,7 @@
 		9B260BC323DE055B00CE02E2 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		9B260BC523DE067600CE02E2 /* DeliveryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryCoordinator.swift; sourceTree = "<group>"; };
 		9BC28EDF23DE756700B80D3F /* UIImage+Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Circle.swift"; sourceTree = "<group>"; };
+		9BC28EE123DE7D9B00B80D3F /* UIColor+HexInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HexInit.swift"; sourceTree = "<group>"; };
 		9BC883F423DE076100CE418D /* DeliveryUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryUIView.swift; sourceTree = "<group>"; };
 		9BC883F623DE082200CE418D /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		9BC883F923DE0B1400CE418D /* DeliveryCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryCardCell.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				9BC28EDF23DE756700B80D3F /* UIImage+Circle.swift */,
+				9BC28EE123DE7D9B00B80D3F /* UIColor+HexInit.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				9BC883F723DE082200CE418D /* BaseCoordinator.swift in Sources */,
 				9B20EE0823DE25DD00C69C97 /* DeliveryCardCellViewModel.swift in Sources */,
 				9B260BBD23DE04EE00CE02E2 /* DeliveryConfigurator.swift in Sources */,
+				9BC28EE223DE7D9B00B80D3F /* UIColor+HexInit.swift in Sources */,
 				9B260BC223DE054A00CE02E2 /* BaseViewController.swift in Sources */,
 				9B20EE0623DE242300C69C97 /* DeliveryCardCell+Builder.swift in Sources */,
 				9BC28EE023DE756700B80D3F /* UIImage+Circle.swift in Sources */,

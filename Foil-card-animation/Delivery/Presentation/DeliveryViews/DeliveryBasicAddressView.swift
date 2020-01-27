@@ -28,7 +28,7 @@ final class DeliveryBasicAddressView: UIView {
     lazy var widgetImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage.circle(diameter: Constants.bulletDiameter, color: .blue)
+        imageView.image = UIImage.circle(diameter: Constants.bulletDiameter, color: UIColor(rgb: PresentationConstants.Delivery.accentColor))
         imageView.widthAnchor.constraint(equalToConstant: Constants.bulletDiameter).isActive = true
         return imageView
     }()

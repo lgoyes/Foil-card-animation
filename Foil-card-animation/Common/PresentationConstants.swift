@@ -11,5 +11,6 @@ import Foundation
 struct PresentationConstants {
     struct Delivery {
         static let title = "Delivery"
+        static let accentColor = 0x5E4A9A
     }
 }

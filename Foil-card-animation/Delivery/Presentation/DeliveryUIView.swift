@@ -18,7 +18,7 @@ final class DeliveryUIView: UIView {
 
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.collectionViewLayout)
-        collectionView.backgroundColor = .systemBackground
+        collectionView.backgroundColor = UIColor(rgb:0xADBFA8)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
