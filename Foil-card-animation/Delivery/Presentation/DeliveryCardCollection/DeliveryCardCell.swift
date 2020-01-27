@@ -17,11 +17,12 @@ final class DeliveryCardCell: UICollectionViewCell {
     static let reuseIdentifier = "DeliveryCardCellReuseIdentifier"
 
     struct Constants {
-        static let height: CGFloat = 120
+        static let height: CGFloat = 140
         static let mainStackVerticalSpacing: CGFloat = 10.0
         static let requestsTitle = "Requests"
         static let pledgeTitle = "Pledge"
         static let weightTitle = "Weight"
+        static let todayTitle = "Today"
     }
 
     // MARK: - Outlets
@@ -45,8 +46,16 @@ final class DeliveryCardCell: UICollectionViewCell {
         return DeliveryBasicKPIView()
     }()
 
-    lazy var indexedDeadlineView: DeliveryBasicIndexedDeadlineView = {
-        return DeliveryBasicIndexedDeadlineView()
+    lazy var deadlineKPI: DeliveryBasicKPIView = {
+        return DeliveryBasicKPIView()
+    }()
+
+    lazy var indexLabel: UILabel = {
+        let label = getDefaultLabel()
+        label.textAlignment = .center
+        label.backgroundColor = .blue
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
 
     // MARK: - StackViews
@@ -54,6 +63,18 @@ final class DeliveryCardCell: UICollectionViewCell {
         let stack = getDefaultHorizontalStack()
         stack.alignment = .center
         stack.distribution = .fillEqually
+        stack.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
+        stack.isLayoutMarginsRelativeArrangement = true
+        return stack
+    }()
+
+    lazy var topStackView: UIStackView = {
+        let stack = getDefaultHorizontalStack()
+        stack.alignment = .center
+        stack.spacing = 10.0
+        stack.distribution = .fillProportionally
+        stack.layoutMargins = UIEdgeInsets(top: 20, left: 0, bottom: 00, right: 0)
+        stack.isLayoutMarginsRelativeArrangement = true
         return stack
     }()
 
@@ -65,50 +86,61 @@ final class DeliveryCardCell: UICollectionViewCell {
         return stack
     }()
 
-    lazy var indexHorizontalStack: UIStackView = {
-        let stack = getDefaultHorizontalStack()
-        stack.alignment = .fill
-        stack.distribution = .fillProportionally
-        return stack
+    lazy var addressContainerStackView: UIStackView = {
+        let stackView = getDefaultVerticalStack()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.spacing = 10.0
+        return stackView
     }()
 
     // MARK: - Internal methods
 
     func setupCellData(with model: DeliveryCardCellViewModel, and index: Int) {
-        self.set(sourceAddress: model.sourceAddress)
-        self.set(destinationAddress: model.destinationAddress)
-        self.setupBottomStack(requests: model.numberOfRequests, pledge: model.pedge, weight: model.weight)
-        self.setupIndexedWidget(with: model.deadline, and: index)
+        self.setupTopStack(index: index, sourceAddress: model.sourceAddress, destinationAddress: model.destinationAddress)
+        self.setupBottomStack(deadline: model.deadline, requests: model.numberOfRequests, pledge: model.pedge, weight: model.weight)
     }
 
     func setupMainStack() {
-        mainStackView.addArrangedSubview(sourceAddressView)
-        mainStackView.addArrangedSubview(destinationAddressView)
+        mainStackView.addArrangedSubview(topStackView)
         mainStackView.addArrangedSubview(bottomStackView)
     }
 
-    func setupBottomStack(requests: String, pledge: String, weight: String) {
+    func setupTopStack(index: Int, sourceAddress: String, destinationAddress: String) {
+        indexLabel.text = String(describing: index)
+        self.set(sourceAddress: sourceAddress)
+        self.set(destinationAddress: destinationAddress)
+
+        addressContainerStackView.addArrangedSubview(sourceAddressView)
+        addressContainerStackView.addArrangedSubview(destinationAddressView)
+
+        topStackView.addArrangedSubview(indexLabel)
+        topStackView.addArrangedSubview(addressContainerStackView)
+
+        NSLayoutConstraint.activate([
+            addressContainerStackView.widthAnchor.constraint(equalTo: indexLabel.widthAnchor, multiplier: 3.0)
+            ])
+    }
+
+    func setupBottomStack(deadline: Date, requests: String, pledge: String, weight: String) {
+        deadlineKPI.configure(with: getDateText(from: deadline), and: getTimeText(from: deadline))
         requestsKPI.configure(with: Constants.requestsTitle.uppercased(), and: requests)
         pledgeKPI.configure(with: Constants.pledgeTitle.uppercased(), and: requests)
         weightKPI.configure(with: Constants.weightTitle.uppercased(), and: weight)
 
+        self.bottomStackView.addArrangedSubview(deadlineKPI)
         self.bottomStackView.addArrangedSubview(requestsKPI)
         self.bottomStackView.addArrangedSubview(pledgeKPI)
         self.bottomStackView.addArrangedSubview(weightKPI)
-    }
-
-    func setupIndexedWidget(with deadline: Date, and index: Int) {
-        self.indexedDeadlineView.configure(with: String(describing: index), deadline: deadline)
     }
 
     func setupConstraints() {
         self.addSubview(mainStackView)
         mainStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            mainStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-            mainStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
-            mainStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            mainStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
+            mainStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+            mainStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
+            mainStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
+            mainStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0)
             ])
     }
 
@@ -120,16 +152,38 @@ final class DeliveryCardCell: UICollectionViewCell {
         self.destinationAddressView.configure(with: destinationAddress)
     }
 
-    func setupTheme(with collectionView: UICollectionView) {
-        self.backgroundColor = .red
+    func setupTheme() {
+        self.backgroundColor = .yellow
+        self.deadlineKPI.backgroundColor = .red
+        self.indexLabel.backgroundColor = .red
+    }
+
+    func getDateText(from date: Date) -> String {
+        if isToday(date) {
+            return Constants.todayTitle.uppercased()
+        } else {
+            let format = DateFormatter()
+            format.dateFormat = "MMM dd, yyyy"
+            return format.string(from: date)
+        }
+    }
+
+    func getTimeText(from date: Date) -> String {
+        let format = DateFormatter()
+        format.dateFormat = "h:mm a"
+        return format.string(from: date)
+    }
+
+    func isToday(_ date: Date) -> Bool {
+        return Calendar.current.isDateInToday(date)
     }
 }
 
 extension DeliveryCardCell: DeliveryCardCellType {
     func configure(with model: DeliveryCardCellViewModel, index: Int, and collectionView: UICollectionView) {
-        self.setupTheme(with: collectionView)
         self.setupMainStack()
         self.setupConstraints()
         self.setupCellData(with: model, and: index)
+        self.setupTheme()
     }
 }

@@ -18,7 +18,7 @@ final class DeliveryUIView: UIView {
 
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.collectionViewLayout)
-        collectionView.backgroundColor = .yellow
+        collectionView.backgroundColor = .systemBackground
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
@@ -27,7 +27,7 @@ final class DeliveryUIView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.blue
+        self.backgroundColor = .systemBackground
     }
 
     required init?(coder: NSCoder) {
@@ -44,8 +44,8 @@ final class DeliveryUIView: UIView {
         NSLayoutConstraint.activate([
             self.collectionView.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor, constant: 10),
             self.collectionView.bottomAnchor.constraint(equalTo: self.layoutMarginsGuide.bottomAnchor, constant: -10),
-            self.collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            self.collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
+            self.collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
+            self.collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0)
             ])
     }
 }

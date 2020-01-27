@@ -23,11 +23,8 @@ final class DeliveryBasicAddressView: UIView {
     lazy var widgetImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.layer.masksToBounds = true
-        imageView.clipsToBounds = true
-        imageView.layer.borderWidth = 5.0
-        imageView.layer.borderColor = UIColor.blue.cgColor
-        imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor, multiplier: 1.0).isActive = true
+        imageView.image = UIImage.circle(diameter: 10.0, color: .blue)
+        imageView.widthAnchor.constraint(equalToConstant: 10).isActive = true
         return imageView
     }()
 
@@ -37,6 +34,8 @@ final class DeliveryBasicAddressView: UIView {
         stackView.axis = .horizontal
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing = 12.0
+        stackView.distribution = .fillProportionally
+        stackView.alignment = .center
         return stackView
     }()
 

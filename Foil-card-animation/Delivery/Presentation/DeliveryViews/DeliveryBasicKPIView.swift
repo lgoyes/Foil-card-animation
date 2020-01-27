@@ -16,12 +16,15 @@ final class DeliveryBasicKPIView: UIView {
     // MARK: Outlets
     lazy var titleLabel: UILabel = {
         let label = UILabel()
+        label.textAlignment = .center
+        label.font = label.font.withSize(12.0)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
     lazy var valueLabel: UILabel = {
         let label = UILabel()
+        label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
