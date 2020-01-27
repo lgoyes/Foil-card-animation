@@ -77,7 +77,16 @@ final class DeliveryDetailKPIContainerView: UIView {
     }
     
     func setupTheme() {
-        self.backgroundColor = .orange
+        let backgroundImage = UIImageView()
+        backgroundImage.translatesAutoresizingMaskIntoConstraints = false
+        backgroundImage.image = UIImage(named: "saitama")
+        backgroundImage.contentMode = .scaleToFill
+        self.insertSubview(backgroundImage, at: 0)
+        NSLayoutConstraint.activate([
+            backgroundImage.topAnchor.constraint(equalTo: self.topAnchor),
+            backgroundImage.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            backgroundImage.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+        ])
     }
 }
 
