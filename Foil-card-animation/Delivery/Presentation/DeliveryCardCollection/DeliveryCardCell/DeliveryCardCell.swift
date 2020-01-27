@@ -9,16 +9,15 @@
 import UIKit
 
 protocol DeliveryCardCellType {
-    func configure(with model: DeliveryCardCellViewModel, index: Int, and collectionView: UICollectionView)
+    func configure(with model: DeliveryCardCellViewModel, index: Int)
 }
 
-final class DeliveryCardCell: UICollectionViewCell {
+final class DeliveryCardCell: BaseDeliveryCardCell {
 
     static let reuseIdentifier = "DeliveryCardCellReuseIdentifier"
 
     struct Constants {
         static let height: CGFloat = 140
-        static let mainStackVerticalSpacing: CGFloat = 10.0
         static let requestsTitle = "Requests"
         static let pledgeTitle = "Pledge"
         static let weightTitle = "Weight"
@@ -82,27 +81,11 @@ final class DeliveryCardCell: UICollectionViewCell {
         return stack
     }()
 
-    lazy var mainStackView: UIStackView = {
-        let stack = getDefaultVerticalStack()
-        stack.alignment = .fill
-        stack.distribution = .equalSpacing
-        stack.spacing = Constants.mainStackVerticalSpacing
-        return stack
-    }()
-
     lazy var addressContainerStackView: UIStackView = {
         let stackView = getDefaultVerticalStack()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing = 10.0
         return stackView
-    }()
-    
-    // MARK: - Container
-    
-    lazy var containerView: UIView = {
-        let view = UIView()
-        
-        return view
     }()
 
     // MARK: - Internal methods
@@ -145,33 +128,6 @@ final class DeliveryCardCell: UICollectionViewCell {
         self.bottomStackView.addArrangedSubview(weightKPI)
     }
 
-    func setupConstraints() {
-        containerView.addSubview(mainStackView)
-        mainStackView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            mainStackView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 0),
-            mainStackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 0),
-            mainStackView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 0),
-            mainStackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: 0)
-            ])
-    }
-    
-    func setupContainer() {
-        self.addSubview(containerView)
-        containerView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            containerView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
-            containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
-            containerView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
-            containerView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0)
-            ])
-        
-        containerView.layer.cornerRadius = 20.0
-        containerView.layer.borderWidth = 1.0
-        containerView.layer.borderColor = UIColor.clear.cgColor
-        containerView.layer.masksToBounds = true
-    }
-
     func set(sourceAddress: String) {
         self.sourceAddressView.configure(with: sourceAddress)
     }
@@ -180,8 +136,8 @@ final class DeliveryCardCell: UICollectionViewCell {
         self.destinationAddressView.configure(with: destinationAddress)
     }
 
-    func setupTheme() {
-        self.containerView.backgroundColor = .white
+    override func setupTheme() {
+        super.setupTheme()
         
         let backgroundView = UIView()
         backgroundView.backgroundColor = UIColor(rgb: PresentationConstants.Delivery.accentColor)
@@ -217,10 +173,10 @@ final class DeliveryCardCell: UICollectionViewCell {
 }
 
 extension DeliveryCardCell: DeliveryCardCellType {
-    func configure(with model: DeliveryCardCellViewModel, index: Int, and collectionView: UICollectionView) {
+    func configure(with model: DeliveryCardCellViewModel, index: Int) {
         self.setupContainer()
         self.setupMainStack()
-        self.setupConstraints()
+        self.setupMainStackConstraints()
         self.setupCellData(with: model, and: index)
         self.setupTheme()
     }

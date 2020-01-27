@@ -1,5 +1,5 @@
 //
-//  DeliveryCardCell+Builder.swift
+//  BaseDeliveryCardCell+Builder.swift
 //  Foil-card-animation
 //
 //  Created by Luis David Goyes Garces on 1/26/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension DeliveryCardCell {
+extension BaseDeliveryCardCell {
     func getDefaultLabel() -> UILabel {
         return UILabel()
     }

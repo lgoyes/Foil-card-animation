@@ -40,7 +40,7 @@ final class DeliveryCardAdapter: NSObject, UICollectionViewDataSource, UICollect
             fatalError("Impossible to dequeue a DeliveryCardCell")
         }
 
-        cell.configure(with: data[indexPath.row], index: indexPath.row, and: collectionView)
+        cell.configure(with: data[indexPath.row], index: indexPath.row)
 
         return cell
     }
@@ -48,7 +48,7 @@ final class DeliveryCardAdapter: NSObject, UICollectionViewDataSource, UICollect
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return Constants.numberOfSections
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.collectionView.frame.width - 20.0, height: DeliveryCardCell.Constants.height)
     }
@@ -68,5 +68,6 @@ extension DeliveryCardAdapter: DeliveryCardAdapterManageable {
     func attach(collectionView: UICollectionView) {
         self.collectionView = collectionView
         collectionView.register(DeliveryCardCell.self, forCellWithReuseIdentifier: DeliveryCardCell.reuseIdentifier)
+        collectionView.register(DeliveryCardDetailCell.self, forCellWithReuseIdentifier: DeliveryCardDetailCell.reuseIdentifier)
     }
 }
