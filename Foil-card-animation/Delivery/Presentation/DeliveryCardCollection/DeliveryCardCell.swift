@@ -9,23 +9,26 @@
 import UIKit
 
 protocol DeliveryCardCellType {
-    func configure(with model: DeliveryCardCellViewModel, and collectionView: UICollectionView)
+    func configure(with model: DeliveryCardCellViewModel, index: Int, and collectionView: UICollectionView)
 }
 
 final class DeliveryCardCell: UICollectionViewCell {
 
     static let reuseIdentifier = "DeliveryCardCellReuseIdentifier"
-    
+
     struct Constants {
         static let height: CGFloat = 120
         static let mainStackVerticalSpacing: CGFloat = 10.0
+        static let requestsTitle = "Requests"
+        static let pledgeTitle = "Pledge"
+        static let weightTitle = "Weight"
     }
 
     // MARK: - Outlets
     lazy var sourceAddressView: DeliveryBasicAddressView = {
         return DeliveryBasicAddressView()
     }()
-    
+
     lazy var destinationAddressView: DeliveryBasicAddressView = {
         return DeliveryBasicAddressView()
     }()
@@ -40,6 +43,10 @@ final class DeliveryCardCell: UICollectionViewCell {
 
     lazy var weightKPI: DeliveryBasicKPIView = {
         return DeliveryBasicKPIView()
+    }()
+
+    lazy var indexedDeadlineView: DeliveryBasicIndexedDeadlineView = {
+        return DeliveryBasicIndexedDeadlineView()
     }()
 
     // MARK: - StackViews
@@ -58,11 +65,20 @@ final class DeliveryCardCell: UICollectionViewCell {
         return stack
     }()
 
+    lazy var indexHorizontalStack: UIStackView = {
+        let stack = getDefaultHorizontalStack()
+        stack.alignment = .fill
+        stack.distribution = .fillProportionally
+        return stack
+    }()
+
     // MARK: - Internal methods
 
-    func setupCellData(with model: DeliveryCardCellViewModel) {
+    func setupCellData(with model: DeliveryCardCellViewModel, and index: Int) {
         self.set(sourceAddress: model.sourceAddress)
         self.set(destinationAddress: model.destinationAddress)
+        self.setupBottomStack(requests: model.numberOfRequests, pledge: model.pedge, weight: model.weight)
+        self.setupIndexedWidget(with: model.deadline, and: index)
     }
 
     func setupMainStack() {
@@ -72,13 +88,17 @@ final class DeliveryCardCell: UICollectionViewCell {
     }
 
     func setupBottomStack(requests: String, pledge: String, weight: String) {
-        requestsKPI.configure(with: "Requests", and: requests)
-        pledgeKPI.configure(with: "Pledge", and: requests)
-        weightKPI.configure(with: "Weight", and: weight)
-        
+        requestsKPI.configure(with: Constants.requestsTitle.uppercased(), and: requests)
+        pledgeKPI.configure(with: Constants.pledgeTitle.uppercased(), and: requests)
+        weightKPI.configure(with: Constants.weightTitle.uppercased(), and: weight)
+
         self.bottomStackView.addArrangedSubview(requestsKPI)
         self.bottomStackView.addArrangedSubview(pledgeKPI)
         self.bottomStackView.addArrangedSubview(weightKPI)
+    }
+
+    func setupIndexedWidget(with deadline: Date, and index: Int) {
+        self.indexedDeadlineView.configure(with: String(describing: index), deadline: deadline)
     }
 
     func setupConstraints() {
@@ -106,11 +126,10 @@ final class DeliveryCardCell: UICollectionViewCell {
 }
 
 extension DeliveryCardCell: DeliveryCardCellType {
-    func configure(with model: DeliveryCardCellViewModel, and collectionView: UICollectionView) {
+    func configure(with model: DeliveryCardCellViewModel, index: Int, and collectionView: UICollectionView) {
         self.setupTheme(with: collectionView)
-        self.setupBottomStack(requests: model.numberOfRequests, pledge: model.pedge, weight: model.weight)
         self.setupMainStack()
         self.setupConstraints()
-        self.setupCellData(with: model)
+        self.setupCellData(with: model, and: index)
     }
 }

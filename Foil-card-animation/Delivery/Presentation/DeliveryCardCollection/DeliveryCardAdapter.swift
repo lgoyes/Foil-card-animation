@@ -40,7 +40,7 @@ final class DeliveryCardAdapter: NSObject, UICollectionViewDataSource, UICollect
             fatalError("Impossible to dequeue a DeliveryCardCell")
         }
 
-        cell.configure(with: data[indexPath.row], and: collectionView)
+        cell.configure(with: data[indexPath.row], index: indexPath.row, and: collectionView)
 
         return cell
     }

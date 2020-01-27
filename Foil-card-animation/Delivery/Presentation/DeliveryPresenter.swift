@@ -6,6 +6,8 @@
 //  Copyright © 2020 Luis David Goyes Garces. All rights reserved.
 //
 
+import Foundation
+
 final class DeliveryPresenter: BasePresenter<DeliveryViewType, DeliveryViewController>, DeliveryPresenterType {
     
     struct Constants {
@@ -27,7 +29,8 @@ final class DeliveryPresenter: BasePresenter<DeliveryViewType, DeliveryViewContr
             destinationAddress: Constants.destinationAddress,
             numberOfRequests: Constants.numberOfRequests,
             pedge: Constants.pedge,
-            weight: Constants.weight)
+            weight: Constants.weight,
+            deadline: Date())
         self.view.set(items: [DeliveryCardCellViewModel].init(repeating: item, count: 20))
     }
 }
