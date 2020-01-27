@@ -8,16 +8,12 @@
 
 import UIKit
 
-protocol DeliveryCardDetailCellType {
-    func configure(with model: DeliveryCardCellViewModel, index: Int)
-}
-
 final class DeliveryCardDetailCell: BaseDeliveryCardCell {
 
     static let reuseIdentifier = "DeliveryCardDetailCellReuseIdentifier"
 
     struct Constants {
-        static let height: CGFloat = 300
+        static let height: CGFloat = 50
     }
 
     // MARK: - Outlets
@@ -32,13 +28,22 @@ final class DeliveryCardDetailCell: BaseDeliveryCardCell {
     func setupMainStack() {
         mainStackView.addArrangedSubview(headerView)
     }
+    
+    func setupCellData(with model: DeliveryCardCellViewModel, and index: Int) {
+        self.setupHeader(index: index, price: model.pedge)
+    }
+    
+    func setupHeader(index: Int, price: String) {
+        headerView.configure(with: String(describing: index), and: price)
+    }
 }
 
-extension DeliveryCardDetailCell: DeliveryCardDetailCellType {
+extension DeliveryCardDetailCell: DeliveryCardCellType {
     func configure(with model: DeliveryCardCellViewModel, index: Int) {
         self.setupContainer()
         self.setupMainStackConstraints()
         self.setupMainStack()
+        self.setupCellData(with: model, and: index)
         self.setupTheme()
     }
 }

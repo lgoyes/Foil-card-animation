@@ -16,7 +16,7 @@ class NavButton: UIButton {
         let lineWidth: CGFloat = 1.0
         let lineLenght: CGFloat = min(bounds.width, bounds.height) * 0.8
         let lineColor: UIColor = UIColor.white
-        let marginGap: CGFloat = 5.0
+        let gap: CGFloat = bounds.height / 4
 
         for lineNumber in 0...2 {
             let linePath = UIBezierPath()
@@ -24,12 +24,12 @@ class NavButton: UIButton {
             linePath.move(to:
                     CGPoint(
                         x: bounds.width / 2.0 - lineLenght / 2.0,
-                        y: marginGap + 6.0 * CGFloat(lineNumber)))
+                        y: gap * CGFloat(lineNumber + 1)))
 
             linePath.addLine(to:
                     CGPoint(
                         x: bounds.width / 2.0 + lineLenght / 2.0,
-                        y: marginGap + 6.0 * CGFloat(lineNumber)))
+                        y: gap * CGFloat(lineNumber + 1)))
 
             lineColor.setStroke()
             linePath.stroke()

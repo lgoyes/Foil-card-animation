@@ -36,13 +36,28 @@ final class DeliveryCardAdapter: NSObject, UICollectionViewDataSource, UICollect
             fatalError("Adapter's collectionView not set")
         }
 
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DeliveryCardCell.reuseIdentifier, for: indexPath) as? DeliveryCardCell else {
-            fatalError("Impossible to dequeue a DeliveryCardCell")
-        }
+        let viewModel = data[indexPath.row]
 
-        cell.configure(with: data[indexPath.row], index: indexPath.row)
+        let cell: DeliveryCardCellType & UICollectionViewCell
+        if viewModel.type == .master {
+            guard let masterCell = collectionView.dequeueReusableCell(withReuseIdentifier: DeliveryCardCell.reuseIdentifier, for: indexPath) as? DeliveryCardCell else {
+                fatalError("Impossible to dequeue a DeliveryCardCell")
+            }
+            cell = masterCell
+        } else {
+            guard let detailCell = collectionView.dequeueReusableCell(withReuseIdentifier: DeliveryCardDetailCell.reuseIdentifier, for: indexPath) as? DeliveryCardDetailCell else {
+                fatalError("Impossible to dequeue a DeliveryCardDetailCell")
+            }
+            cell = detailCell
+        }
+        cell.configure(with: viewModel, index: indexPath.row)
 
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        data[indexPath.row].type = data[indexPath.row].type.toggle()
+        collectionView.reloadData()
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -50,7 +65,8 @@ final class DeliveryCardAdapter: NSObject, UICollectionViewDataSource, UICollect
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.collectionView.frame.width - 20.0, height: DeliveryCardCell.Constants.height)
+        let height = data[indexPath.row].type == .master ? DeliveryCardCell.Constants.height : DeliveryCardDetailCell.Constants.height
+        return CGSize(width: self.collectionView.frame.width - 20.0, height: height)
     }
 }
 

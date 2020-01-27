@@ -8,6 +8,21 @@
 
 import Foundation
 
+enum DeliveryCardViewModelType {
+    case master
+    case detail
+}
+
+extension DeliveryCardViewModelType {
+    func toggle() -> DeliveryCardViewModelType {
+        if case DeliveryCardViewModelType.master = self {
+            return .detail
+        } else {
+            return .master
+        }
+    }
+}
+
 struct DeliveryCardCellViewModel {
     let sourceAddress: String
     let destinationAddress: String
@@ -15,4 +30,5 @@ struct DeliveryCardCellViewModel {
     let pedge: String
     let weight: String
     let deadline: Date
+    var type: DeliveryCardViewModelType
 }

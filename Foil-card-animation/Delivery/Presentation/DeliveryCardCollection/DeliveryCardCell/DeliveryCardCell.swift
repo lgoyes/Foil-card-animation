@@ -119,7 +119,7 @@ final class DeliveryCardCell: BaseDeliveryCardCell {
     func setupBottomStack(deadline: Date, requests: String, pledge: String, weight: String) {
         deadlineKPI.configure(with: getDateText(from: deadline), and: getTimeText(from: deadline))
         requestsKPI.configure(with: Constants.requestsTitle.uppercased(), and: requests)
-        pledgeKPI.configure(with: Constants.pledgeTitle.uppercased(), and: requests)
+        pledgeKPI.configure(with: Constants.pledgeTitle.uppercased(), and: pledge)
         weightKPI.configure(with: Constants.weightTitle.uppercased(), and: weight)
 
         self.bottomStackView.addArrangedSubview(deadlineKPI)
@@ -175,8 +175,8 @@ final class DeliveryCardCell: BaseDeliveryCardCell {
 extension DeliveryCardCell: DeliveryCardCellType {
     func configure(with model: DeliveryCardCellViewModel, index: Int) {
         self.setupContainer()
-        self.setupMainStack()
         self.setupMainStackConstraints()
+        self.setupMainStack()
         self.setupCellData(with: model, and: index)
         self.setupTheme()
     }

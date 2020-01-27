@@ -17,17 +17,22 @@ final class DeliveryDetailHeaderView: UIView {
     lazy var indexLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = label.font.withSize(18.0)
+        label.textColor = .white
         return label
     }()
 
     lazy var priceLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = label.font.withSize(18.0)
+        label.textColor = .white
         return label
     }()
 
     lazy var navButton: NavButton = {
         let button = NavButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
@@ -36,6 +41,11 @@ final class DeliveryDetailHeaderView: UIView {
     lazy var containerStack: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
+        stackView.alignment = .center
+        stackView.distribution = .equalSpacing
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.layoutMargins = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 30)
+        stackView.isLayoutMarginsRelativeArrangement = true
         return stackView
     }()
 
@@ -55,6 +65,7 @@ final class DeliveryDetailHeaderView: UIView {
     }
 
     func setContainerStackConstraints() {
+        self.addSubview(containerStack)
         NSLayoutConstraint.activate([
             containerStack.topAnchor.constraint(equalTo: self.topAnchor),
             containerStack.bottomAnchor.constraint(equalTo: self.bottomAnchor),
@@ -62,7 +73,7 @@ final class DeliveryDetailHeaderView: UIView {
             containerStack.trailingAnchor.constraint(equalTo: self.trailingAnchor)
             ])
     }
-    
+
     func setupTheme() {
         self.backgroundColor = UIColor(rgb: PresentationConstants.Delivery.accentColor)
     }

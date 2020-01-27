@@ -30,7 +30,8 @@ final class DeliveryPresenter: BasePresenter<DeliveryViewType, DeliveryViewContr
             numberOfRequests: Constants.numberOfRequests,
             pedge: Constants.pedge,
             weight: Constants.weight,
-            deadline: Date())
+            deadline: Date(),
+            type: .master)
         self.view.set(items: [DeliveryCardCellViewModel].init(repeating: item, count: 20))
     }
 }
