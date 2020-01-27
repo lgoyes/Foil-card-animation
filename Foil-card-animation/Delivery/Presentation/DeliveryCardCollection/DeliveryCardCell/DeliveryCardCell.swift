@@ -18,9 +18,6 @@ final class DeliveryCardCell: BaseDeliveryCardCell {
 
     struct Constants {
         static let height: CGFloat = 140
-        static let requestsTitle = "Requests"
-        static let pledgeTitle = "Pledge"
-        static let weightTitle = "Weight"
         static let todayTitle = "Today"
     }
 
@@ -118,9 +115,9 @@ final class DeliveryCardCell: BaseDeliveryCardCell {
 
     func setupBottomStack(deadline: Date, requests: String, pledge: String, weight: String) {
         deadlineKPI.configure(with: getDateText(from: deadline), and: getTimeText(from: deadline))
-        requestsKPI.configure(with: Constants.requestsTitle.uppercased(), and: requests)
-        pledgeKPI.configure(with: Constants.pledgeTitle.uppercased(), and: pledge)
-        weightKPI.configure(with: Constants.weightTitle.uppercased(), and: weight)
+        requestsKPI.configure(with: PresentationConstants.Delivery.requestsTitle.uppercased(), and: requests)
+        pledgeKPI.configure(with: PresentationConstants.Delivery.pledgeTitle.uppercased(), and: pledge)
+        weightKPI.configure(with: PresentationConstants.Delivery.weightTitle.uppercased(), and: weight)
 
         self.bottomStackView.addArrangedSubview(deadlineKPI)
         self.bottomStackView.addArrangedSubview(requestsKPI)

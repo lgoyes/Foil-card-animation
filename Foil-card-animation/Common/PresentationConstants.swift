@@ -12,5 +12,8 @@ struct PresentationConstants {
     struct Delivery {
         static let title = "Delivery"
         static let accentColor = 0x5E4A9A
+        static let requestsTitle = "Requests"
+        static let pledgeTitle = "Pledge"
+        static let weightTitle = "Weight"
     }
 }

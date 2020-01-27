@@ -24,6 +24,7 @@
 		9BC1648D23DE921F003ECAC7 /* BaseDeliveryCardCell+Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1648C23DE921F003ECAC7 /* BaseDeliveryCardCell+Builder.swift */; };
 		9BC1648F23DE92D5003ECAC7 /* DeliveryDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1648E23DE92D5003ECAC7 /* DeliveryDetailHeaderView.swift */; };
 		9BC1649123DE9551003ECAC7 /* NavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1649023DE9551003ECAC7 /* NavButton.swift */; };
+		9BC1649323DE9F99003ECAC7 /* DeliveryDetailKPIContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1649223DE9F99003ECAC7 /* DeliveryDetailKPIContainerView.swift */; };
 		9BC28EE023DE756700B80D3F /* UIImage+Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC28EDF23DE756700B80D3F /* UIImage+Circle.swift */; };
 		9BC28EE223DE7D9B00B80D3F /* UIColor+HexInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC28EE123DE7D9B00B80D3F /* UIColor+HexInit.swift */; };
 		9BC883F523DE076100CE418D /* DeliveryUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC883F423DE076100CE418D /* DeliveryUIView.swift */; };
@@ -73,6 +74,7 @@
 		9BC1648C23DE921F003ECAC7 /* BaseDeliveryCardCell+Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseDeliveryCardCell+Builder.swift"; sourceTree = "<group>"; };
 		9BC1648E23DE92D5003ECAC7 /* DeliveryDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailHeaderView.swift; sourceTree = "<group>"; };
 		9BC1649023DE9551003ECAC7 /* NavButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavButton.swift; sourceTree = "<group>"; };
+		9BC1649223DE9F99003ECAC7 /* DeliveryDetailKPIContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailKPIContainerView.swift; sourceTree = "<group>"; };
 		9BC28EDF23DE756700B80D3F /* UIImage+Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Circle.swift"; sourceTree = "<group>"; };
 		9BC28EE123DE7D9B00B80D3F /* UIColor+HexInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HexInit.swift"; sourceTree = "<group>"; };
 		9BC883F423DE076100CE418D /* DeliveryUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryUIView.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				9B20EE1023DE3FF400C69C97 /* DeliveryBasicAddressView.swift */,
 				9BC1648E23DE92D5003ECAC7 /* DeliveryDetailHeaderView.swift */,
 				9BC1649023DE9551003ECAC7 /* NavButton.swift */,
+				9BC1649223DE9F99003ECAC7 /* DeliveryDetailKPIContainerView.swift */,
 			);
 			path = DeliveryViews;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				9BC1648D23DE921F003ECAC7 /* BaseDeliveryCardCell+Builder.swift in Sources */,
 				9BC28EE023DE756700B80D3F /* UIImage+Circle.swift in Sources */,
 				9BDFC42723DDFC3300527A22 /* SceneDelegate.swift in Sources */,
+				9BC1649323DE9F99003ECAC7 /* DeliveryDetailKPIContainerView.swift in Sources */,
 				9B20EE0423DE22D700C69C97 /* PresentationConstants.swift in Sources */,
 				9BC883FA23DE0B1400CE418D /* DeliveryCardCell.swift in Sources */,
 				9B20EE0A23DE276400C69C97 /* DeliveryCardAdapter.swift in Sources */,
