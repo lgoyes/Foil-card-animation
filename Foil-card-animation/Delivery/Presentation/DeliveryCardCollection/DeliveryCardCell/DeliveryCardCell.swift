@@ -152,16 +152,12 @@ final class DeliveryCardCell: BaseDeliveryCardCell {
         if isToday(date) {
             return Constants.todayTitle.uppercased()
         } else {
-            let format = DateFormatter()
-            format.dateFormat = "MMM dd, yyyy"
-            return format.string(from: date)
+            return date.toString(with: "MMM dd, yyyy")
         }
     }
 
     func getTimeText(from date: Date) -> String {
-        let format = DateFormatter()
-        format.dateFormat = "h:mm a"
-        return format.string(from: date)
+        return date.toString(with: "h:mm a")
     }
 
     func isToday(_ date: Date) -> Bool {

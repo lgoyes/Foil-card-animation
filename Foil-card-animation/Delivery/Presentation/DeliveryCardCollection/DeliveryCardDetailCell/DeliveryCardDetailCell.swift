@@ -13,9 +13,11 @@ final class DeliveryCardDetailCell: BaseDeliveryCardCell {
     static let reuseIdentifier = "DeliveryCardDetailCellReuseIdentifier"
 
     struct Constants {
-        static let height: CGFloat = DeliveryDetailHeaderView.Constants.height + DeliveryDetailKPIContainerView.Constants.height + DeliveryDetailKPIRowView.Constants.height
+        static let height: CGFloat = DeliveryDetailHeaderView.Constants.height + DeliveryDetailKPIContainerView.Constants.height + DeliveryDetailKPIRowView.Constants.height * 2
         static let from: String = "From"
         static let to: String = "To"
+        static let deliveryDate: String = "Delivery date"
+        static let requestDeadline: String = "Request deadline"
     }
 
     // MARK: - Outlets
@@ -33,6 +35,11 @@ final class DeliveryCardDetailCell: BaseDeliveryCardCell {
         let addressInformationView = DeliveryDetailKPIRowView()
         return addressInformationView
     }()
+    
+    lazy var deadlineInformationView: DeliveryDetailKPIRowView = {
+        let deadlineInformationView = DeliveryDetailKPIRowView()
+        return deadlineInformationView
+    }()
 
     // MARK: - StackViews
 
@@ -41,12 +48,14 @@ final class DeliveryCardDetailCell: BaseDeliveryCardCell {
         mainStackView.addArrangedSubview(headerView)
         mainStackView.addArrangedSubview(kpiContainer)
         mainStackView.addArrangedSubview(addressInformationView)
+        mainStackView.addArrangedSubview(deadlineInformationView)
     }
 
     func setupCellData(with model: DeliveryCardCellViewModel, and index: Int) {
         self.setupHeader(index: index, price: model.pedge)
         self.setupKPIContainer(with: model.numberOfRequests, pledge: model.pedge, and: model.weight)
         self.setupAddressInformationView(with: model.sourceAddress, and: model.destinationAddress)
+        self.setupDeadlineView(with: model.deadline, and: "23min")
     }
 
     func setupHeader(index: Int, price: String) {
@@ -67,6 +76,19 @@ final class DeliveryCardDetailCell: BaseDeliveryCardCell {
                 title: Constants.to.uppercased(),
                 valueLarge: destination.address,
                 valueSmall: destination.addressComplement)
+            ])
+    }
+    
+    func setupDeadlineView(with deliveryDate: Date, and requestDeadline: String) {
+        deadlineInformationView.configure(kpis: [
+            DeliveryDetailKPI(
+                title: Constants.deliveryDate.uppercased(),
+                valueLarge: deliveryDate.toString(with: "h:mm a"),
+                valueSmall: deliveryDate.toString(with: "MMM dd, yyyy")),
+            DeliveryDetailKPI(
+                title: Constants.requestDeadline.uppercased(),
+                valueLarge: requestDeadline,
+                valueSmall: nil)
             ])
     }
 
