@@ -91,7 +91,8 @@ final class DeliveryDetailKPIContainerView: UIView {
             backgroundImage.topAnchor.constraint(equalTo: self.topAnchor),
             backgroundImage.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             backgroundImage.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            backgroundImage.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            backgroundImage.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            backgroundImage.heightAnchor.constraint(equalToConstant: Constants.height)
         ])
     }
 }

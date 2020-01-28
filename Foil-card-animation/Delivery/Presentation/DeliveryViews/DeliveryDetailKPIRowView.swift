@@ -10,6 +10,7 @@ import UIKit
 
 protocol DeliveryDetailKPIRowViewType {
     func configure(kpis: [DeliveryDetailKPI])
+    func clear()
 }
 
 final class DeliveryDetailKPIRowView: UIView {
@@ -57,5 +58,9 @@ extension DeliveryDetailKPIRowView: DeliveryDetailKPIRowViewType {
     func configure(kpis: [DeliveryDetailKPI]) {
         self.setupConstraints()
         self.setupKPIChildren(with: kpis)
+    }
+    
+    func clear() {
+        stackRow.removeAllArrangedSubviews()
     }
 }

@@ -35,7 +35,7 @@ final class DeliveryCardDetailCell: BaseDeliveryCardCell {
         let addressInformationView = DeliveryDetailKPIRowView()
         return addressInformationView
     }()
-    
+
     lazy var deadlineInformationView: DeliveryDetailKPIRowView = {
         let deadlineInformationView = DeliveryDetailKPIRowView()
         return deadlineInformationView
@@ -78,7 +78,7 @@ final class DeliveryCardDetailCell: BaseDeliveryCardCell {
                 valueSmall: destination.addressComplement)
             ])
     }
-    
+
     func setupDeadlineView(with deliveryDate: Date, and requestDeadline: String) {
         deadlineInformationView.configure(kpis: [
             DeliveryDetailKPI(
@@ -94,6 +94,12 @@ final class DeliveryCardDetailCell: BaseDeliveryCardCell {
 
     func overrideMainStack() {
         self.mainStackView.spacing = 0.0
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        addressInformationView.clear()
+        deadlineInformationView.clear()
     }
 }
 
