@@ -16,8 +16,8 @@ protocol DeliveryDetailKPIRowViewType {
 final class DeliveryDetailKPIRowView: UIView {
     
     struct Constants {
-        static let height: CGFloat = 80.0
-        static let verticalMargin: CGFloat = 10.0
+        static let height: CGFloat = 60.0
+        static let verticalMargin: CGFloat = 5.0
     }
     
     let stackRow: UIStackView = {

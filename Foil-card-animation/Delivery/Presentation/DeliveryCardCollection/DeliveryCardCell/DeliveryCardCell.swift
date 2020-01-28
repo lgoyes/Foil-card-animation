@@ -163,14 +163,22 @@ final class DeliveryCardCell: BaseDeliveryCardCell {
     func isToday(_ date: Date) -> Bool {
         return Calendar.current.isDateInToday(date)
     }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.setupContainer()
+        self.setupMainStackConstraints()
+        self.setupMainStack()
+        self.setupTheme()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 
 extension DeliveryCardCell: DeliveryCardCellType {
     func configure(with model: DeliveryCardCellViewModel, index: Int) {
-        self.setupContainer()
-        self.setupMainStackConstraints()
-        self.setupMainStack()
         self.setupCellData(with: model, and: index)
-        self.setupTheme()
     }
 }

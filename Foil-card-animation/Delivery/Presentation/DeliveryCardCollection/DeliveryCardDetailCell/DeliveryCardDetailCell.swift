@@ -13,7 +13,7 @@ final class DeliveryCardDetailCell: BaseDeliveryCardCell {
     static let reuseIdentifier = "DeliveryCardDetailCellReuseIdentifier"
 
     struct Constants {
-        static let height: CGFloat = DeliveryDetailHeaderView.Constants.height + DeliveryDetailKPIContainerView.Constants.height + DeliveryDetailKPIRowView.Constants.height * 2
+        static let height: CGFloat = DeliveryDetailHeaderView.Constants.height + DeliveryDetailKPIContainerView.Constants.height + DeliveryDetailKPIRowView.Constants.height * 2 + DeliveryDetailRequestButton.Constants.height
         static let from: String = "From"
         static let to: String = "To"
         static let deliveryDate: String = "Delivery date"
@@ -41,14 +41,21 @@ final class DeliveryCardDetailCell: BaseDeliveryCardCell {
         return deadlineInformationView
     }()
 
+    lazy var requestButton: DeliveryDetailRequestButton = {
+        let requestButton = DeliveryDetailRequestButton()
+        return requestButton
+    }()
+
     // MARK: - StackViews
 
     // MARK: - Internal methods
     func setupMainStack() {
         mainStackView.addArrangedSubview(headerView)
         mainStackView.addArrangedSubview(kpiContainer)
+        mainStackView.addArrangedSubview(UIView())
         mainStackView.addArrangedSubview(addressInformationView)
         mainStackView.addArrangedSubview(deadlineInformationView)
+        mainStackView.addArrangedSubview(requestButton)
     }
 
     func setupCellData(with model: DeliveryCardCellViewModel, and index: Int) {
@@ -56,6 +63,7 @@ final class DeliveryCardDetailCell: BaseDeliveryCardCell {
         self.setupKPIContainer(with: model.numberOfRequests, pledge: model.pedge, and: model.weight)
         self.setupAddressInformationView(with: model.sourceAddress, and: model.destinationAddress)
         self.setupDeadlineView(with: model.deadline, and: "23min")
+        self.setupRequestButton(numberOfRequests: 5)
     }
 
     func setupHeader(index: Int, price: String) {
@@ -92,6 +100,10 @@ final class DeliveryCardDetailCell: BaseDeliveryCardCell {
             ])
     }
 
+    func setupRequestButton(numberOfRequests: Int) {
+        self.requestButton.configure(currentRequests: numberOfRequests)
+    }
+
     func overrideMainStack() {
         self.mainStackView.spacing = 0.0
         self.mainStackView.distribution = .fill
@@ -102,16 +114,24 @@ final class DeliveryCardDetailCell: BaseDeliveryCardCell {
         addressInformationView.clear()
         deadlineInformationView.clear()
     }
-}
-
-extension DeliveryCardDetailCell: DeliveryCardCellType {
-    func configure(with model: DeliveryCardCellViewModel, index: Int) {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         self.setupContainer()
         self.overrideMainStack()
         self.setupMainStackConstraints()
         self.setupMainStack()
-        self.setupCellData(with: model, and: index)
         self.setupTheme()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension DeliveryCardDetailCell: DeliveryCardCellType {
+    func configure(with model: DeliveryCardCellViewModel, index: Int) {
+        self.setupCellData(with: model, and: index)
     }
 }
 
