@@ -88,7 +88,7 @@ final class DeliveryCardCell: BaseDeliveryCardCell {
     // MARK: - Internal methods
 
     func setupCellData(with model: DeliveryCardCellViewModel, and index: Int) {
-        self.setupTopStack(index: index, sourceAddress: model.sourceAddress, destinationAddress: model.destinationAddress)
+        self.setupTopStack(index: index, sourceAddress: model.sourceAddress.toString(), destinationAddress: model.destinationAddress.toString())
         self.setupBottomStack(deadline: model.deadline, requests: model.numberOfRequests, pledge: model.pedge, weight: model.weight)
     }
 

@@ -13,6 +13,11 @@ protocol DeliveryDetailKPIContainerViewType {
 }
 
 final class DeliveryDetailKPIContainerView: UIView {
+    
+    struct Constants {
+        static let background = "saitama"
+        static let height: CGFloat = 100.0
+    }
 
     // MARK: Outlets
     lazy var requestsKPI: DeliveryBasicKPIView = {
@@ -79,13 +84,14 @@ final class DeliveryDetailKPIContainerView: UIView {
     func setupTheme() {
         let backgroundImage = UIImageView()
         backgroundImage.translatesAutoresizingMaskIntoConstraints = false
-        backgroundImage.image = UIImage(named: "saitama")
+        backgroundImage.image = UIImage(named: Constants.background)
         backgroundImage.contentMode = .scaleToFill
         self.insertSubview(backgroundImage, at: 0)
         NSLayoutConstraint.activate([
             backgroundImage.topAnchor.constraint(equalTo: self.topAnchor),
             backgroundImage.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            backgroundImage.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+            backgroundImage.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            backgroundImage.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
 }

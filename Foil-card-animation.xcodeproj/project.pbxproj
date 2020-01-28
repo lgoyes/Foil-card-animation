@@ -19,6 +19,9 @@
 		9B260BC223DE054A00CE02E2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B260BC123DE054A00CE02E2 /* BaseViewController.swift */; };
 		9B260BC423DE055B00CE02E2 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B260BC323DE055B00CE02E2 /* BasePresenter.swift */; };
 		9B260BC623DE067600CE02E2 /* DeliveryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B260BC523DE067600CE02E2 /* DeliveryCoordinator.swift */; };
+		9B8C2EE023DFA6BB001612EA /* DeliveryDetailInformationItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C2EDF23DFA6BB001612EA /* DeliveryDetailInformationItemView.swift */; };
+		9BA5653923DFA9FB00CCE802 /* DeliveryDetailKPIRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA5653823DFA9FB00CCE802 /* DeliveryDetailKPIRowView.swift */; };
+		9BA5653C23DFADBE00CCE802 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA5653B23DFADBE00CCE802 /* Address.swift */; };
 		9BC1648823DE8ECB003ECAC7 /* DeliveryCardDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1648723DE8ECB003ECAC7 /* DeliveryCardDetailCell.swift */; };
 		9BC1648B23DE90CF003ECAC7 /* BaseDeliveryCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1648A23DE90CF003ECAC7 /* BaseDeliveryCardCell.swift */; };
 		9BC1648D23DE921F003ECAC7 /* BaseDeliveryCardCell+Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1648C23DE921F003ECAC7 /* BaseDeliveryCardCell+Builder.swift */; };
@@ -69,6 +72,9 @@
 		9B260BC123DE054A00CE02E2 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9B260BC323DE055B00CE02E2 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		9B260BC523DE067600CE02E2 /* DeliveryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryCoordinator.swift; sourceTree = "<group>"; };
+		9B8C2EDF23DFA6BB001612EA /* DeliveryDetailInformationItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailInformationItemView.swift; sourceTree = "<group>"; };
+		9BA5653823DFA9FB00CCE802 /* DeliveryDetailKPIRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailKPIRowView.swift; sourceTree = "<group>"; };
+		9BA5653B23DFADBE00CCE802 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		9BC1648723DE8ECB003ECAC7 /* DeliveryCardDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryCardDetailCell.swift; sourceTree = "<group>"; };
 		9BC1648A23DE90CF003ECAC7 /* BaseDeliveryCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDeliveryCardCell.swift; sourceTree = "<group>"; };
 		9BC1648C23DE921F003ECAC7 /* BaseDeliveryCardCell+Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseDeliveryCardCell+Builder.swift"; sourceTree = "<group>"; };
@@ -131,6 +137,7 @@
 		9B20EE0B23DE2BAE00C69C97 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				9BA5653A23DFADB400CCE802 /* Models */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -150,6 +157,8 @@
 				9BC1648E23DE92D5003ECAC7 /* DeliveryDetailHeaderView.swift */,
 				9BC1649023DE9551003ECAC7 /* NavButton.swift */,
 				9BC1649223DE9F99003ECAC7 /* DeliveryDetailKPIContainerView.swift */,
+				9B8C2EDF23DFA6BB001612EA /* DeliveryDetailInformationItemView.swift */,
+				9BA5653823DFA9FB00CCE802 /* DeliveryDetailKPIRowView.swift */,
 			);
 			path = DeliveryViews;
 			sourceTree = "<group>";
@@ -187,6 +196,14 @@
 				9BC883F623DE082200CE418D /* BaseCoordinator.swift */,
 			);
 			path = BaseArchitecture;
+			sourceTree = "<group>";
+		};
+		9BA5653A23DFADB400CCE802 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9BA5653B23DFADBE00CCE802 /* Address.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		9BC1648423DE8EAA003ECAC7 /* DeliveryCardCell */ = {
@@ -429,10 +446,12 @@
 				9B260BB823DE04D500CE02E2 /* DeliveryPresenter.swift in Sources */,
 				9BC883F523DE076100CE418D /* DeliveryUIView.swift in Sources */,
 				9B20EE1123DE3FF400C69C97 /* DeliveryBasicAddressView.swift in Sources */,
+				9BA5653C23DFADBE00CCE802 /* Address.swift in Sources */,
 				9BC1648823DE8ECB003ECAC7 /* DeliveryCardDetailCell.swift in Sources */,
 				9BC883F723DE082200CE418D /* BaseCoordinator.swift in Sources */,
 				9B20EE0823DE25DD00C69C97 /* DeliveryCardCellViewModel.swift in Sources */,
 				9B260BBD23DE04EE00CE02E2 /* DeliveryConfigurator.swift in Sources */,
+				9B8C2EE023DFA6BB001612EA /* DeliveryDetailInformationItemView.swift in Sources */,
 				9BC1648F23DE92D5003ECAC7 /* DeliveryDetailHeaderView.swift in Sources */,
 				9BC28EE223DE7D9B00B80D3F /* UIColor+HexInit.swift in Sources */,
 				9BC1648B23DE90CF003ECAC7 /* BaseDeliveryCardCell.swift in Sources */,
@@ -442,6 +461,7 @@
 				9BDFC42723DDFC3300527A22 /* SceneDelegate.swift in Sources */,
 				9BC1649323DE9F99003ECAC7 /* DeliveryDetailKPIContainerView.swift in Sources */,
 				9B20EE0423DE22D700C69C97 /* PresentationConstants.swift in Sources */,
+				9BA5653923DFA9FB00CCE802 /* DeliveryDetailKPIRowView.swift in Sources */,
 				9BC883FA23DE0B1400CE418D /* DeliveryCardCell.swift in Sources */,
 				9B20EE0A23DE276400C69C97 /* DeliveryCardAdapter.swift in Sources */,
 				9B260BBF23DE04F500CE02E2 /* DeliveryContract.swift in Sources */,

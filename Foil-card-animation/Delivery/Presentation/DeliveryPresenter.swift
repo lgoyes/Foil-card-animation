@@ -9,20 +9,24 @@
 import Foundation
 
 final class DeliveryPresenter: BasePresenter<DeliveryViewType, DeliveryViewController>, DeliveryPresenterType {
-    
+
     struct Constants {
-        static let sourceAddress = "W 90th St. New York. 100225"
-        static let destinationAddress = "E 30th St. New York 10016"
+        static let sourceAddress = Address(
+            address: "W 90th St",
+            addressComplement: "New York. 100225")
+        static let destinationAddress = Address(
+            address: "E 30th St",
+            addressComplement: "New York 10016")
         static let numberOfRequests = "2"
         static let pedge = "150"
         static let weight = "light"
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         getDeliveryItems()
     }
-    
+
     func getDeliveryItems() {
         let item = DeliveryCardCellViewModel(
             sourceAddress: Constants.sourceAddress,

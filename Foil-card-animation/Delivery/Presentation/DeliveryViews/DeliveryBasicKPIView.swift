@@ -12,7 +12,7 @@ protocol DeliveryBasicKPIViewType {
     func configure(with title: String, and value: String)
 }
 
-final class DeliveryBasicKPIView: UIView {
+class DeliveryBasicKPIView: UIView {
     // MARK: Outlets
     lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -70,5 +70,3 @@ extension DeliveryBasicKPIView: DeliveryBasicKPIViewType {
         self.setupValue(with: value)
     }
 }
-
-

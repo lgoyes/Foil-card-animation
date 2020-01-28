@@ -24,8 +24,8 @@ extension DeliveryCardViewModelType {
 }
 
 struct DeliveryCardCellViewModel {
-    let sourceAddress: String
-    let destinationAddress: String
+    let sourceAddress: Address
+    let destinationAddress: Address
     let numberOfRequests: String
     let pedge: String
     let weight: String

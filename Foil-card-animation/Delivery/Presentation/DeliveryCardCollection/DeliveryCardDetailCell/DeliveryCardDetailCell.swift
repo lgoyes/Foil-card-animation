@@ -13,7 +13,9 @@ final class DeliveryCardDetailCell: BaseDeliveryCardCell {
     static let reuseIdentifier = "DeliveryCardDetailCellReuseIdentifier"
 
     struct Constants {
-        static let height: CGFloat = 140
+        static let height: CGFloat = DeliveryDetailHeaderView.Constants.height + DeliveryDetailKPIContainerView.Constants.height + DeliveryDetailKPIRowView.Constants.height
+        static let from: String = "From"
+        static let to: String = "To"
     }
 
     // MARK: - Outlets
@@ -21,10 +23,15 @@ final class DeliveryCardDetailCell: BaseDeliveryCardCell {
         let header = DeliveryDetailHeaderView()
         return header
     }()
-    
+
     lazy var kpiContainer: DeliveryDetailKPIContainerView = {
         let kpiContainer = DeliveryDetailKPIContainerView()
         return kpiContainer
+    }()
+
+    lazy var addressInformationView: DeliveryDetailKPIRowView = {
+        let addressInformationView = DeliveryDetailKPIRowView()
+        return addressInformationView
     }()
 
     // MARK: - StackViews
@@ -33,21 +40,36 @@ final class DeliveryCardDetailCell: BaseDeliveryCardCell {
     func setupMainStack() {
         mainStackView.addArrangedSubview(headerView)
         mainStackView.addArrangedSubview(kpiContainer)
+        mainStackView.addArrangedSubview(addressInformationView)
     }
-    
+
     func setupCellData(with model: DeliveryCardCellViewModel, and index: Int) {
         self.setupHeader(index: index, price: model.pedge)
         self.setupKPIContainer(with: model.numberOfRequests, pledge: model.pedge, and: model.weight)
+        self.setupAddressInformationView(with: model.sourceAddress, and: model.destinationAddress)
     }
-    
+
     func setupHeader(index: Int, price: String) {
         headerView.configure(with: String(describing: index), and: price)
     }
-    
+
     func setupKPIContainer(with requests: String, pledge: String, and weight: String) {
         kpiContainer.configure(with: requests, price: pledge, and: weight)
     }
-    
+
+    func setupAddressInformationView(with source: Address, and destination: Address) {
+        addressInformationView.configure(kpis: [
+            DeliveryDetailKPI(
+                title: Constants.from.uppercased(),
+                valueLarge: source.address,
+                valueSmall: source.addressComplement),
+            DeliveryDetailKPI(
+                title: Constants.to.uppercased(),
+                valueLarge: destination.address,
+                valueSmall: destination.addressComplement)
+            ])
+    }
+
     func overrideMainStack() {
         self.mainStackView.spacing = 0.0
     }

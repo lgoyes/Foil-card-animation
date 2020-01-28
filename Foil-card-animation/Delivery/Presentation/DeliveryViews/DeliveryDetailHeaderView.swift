@@ -13,6 +13,11 @@ protocol DeliveryDetailHeaderViewType {
 }
 
 final class DeliveryDetailHeaderView: UIView {
+    
+    struct Constants {
+        static let height: CGFloat = 40.0
+    }
+    
     // MARK: Outlets
     lazy var indexLabel: UILabel = {
         let label = UILabel()
@@ -70,7 +75,8 @@ final class DeliveryDetailHeaderView: UIView {
             containerStack.topAnchor.constraint(equalTo: self.topAnchor),
             containerStack.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             containerStack.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            containerStack.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+            containerStack.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            containerStack.heightAnchor.constraint(equalToConstant: Constants.height)
             ])
     }
 
