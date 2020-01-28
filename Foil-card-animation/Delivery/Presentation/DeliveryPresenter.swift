@@ -10,17 +10,11 @@ import Foundation
 
 final class DeliveryPresenter: BasePresenter<DeliveryViewType, DeliveryViewController>, DeliveryPresenterType {
 
-    struct Constants {
-        static let sourceAddress = Address(
-            address: "W 90th St",
-            addressComplement: "New York. 100225")
-        static let destinationAddress = Address(
-            address: "E 30th St",
-            addressComplement: "New York 10016")
-        static let numberOfRequests = "2"
-        static let pedge = "150"
-        static let weight = "light"
+    struct InputDependencies {
+        let getDeliveriesInteractor: BaseInteractor<[DeliveryCardCellViewModel], Void>
     }
+
+    var dependencies: InputDependencies!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +22,14 @@ final class DeliveryPresenter: BasePresenter<DeliveryViewType, DeliveryViewContr
     }
 
     func getDeliveryItems() {
-        let item = DeliveryCardCellViewModel(
-            sourceAddress: Constants.sourceAddress,
-            destinationAddress: Constants.destinationAddress,
-            numberOfRequests: Constants.numberOfRequests,
-            pedge: Constants.pedge,
-            weight: Constants.weight,
-            deadline: ,
-            type: .master)
-        self.view.set(items: [DeliveryCardCellViewModel].init(repeating: item, count: 20))
+        dependencies
+            .getDeliveriesInteractor
+            .set { [weak self] (deliveryItems) in
+                self?.view.set(items: deliveryItems)
+            }
+            .set(onError: { error in
+                self.handleException(error)
+            })
+            .execute()
     }
 }
