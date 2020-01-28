@@ -13,7 +13,7 @@ protocol DeliveryDetailKPIContainerViewType {
 }
 
 final class DeliveryDetailKPIContainerView: UIView {
-    
+
     struct Constants {
         static let background = "saitama"
         static let height: CGFloat = 100.0
@@ -39,7 +39,7 @@ final class DeliveryDetailKPIContainerView: UIView {
         stackView.alignment = .center
         stackView.distribution = .equalSpacing
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.layoutMargins = UIEdgeInsets(top: 70, left: 10, bottom: 0, right: 10)
+        stackView.layoutMargins = UIEdgeInsets(top: 50, left: 10, bottom: 0, right: 10)
         stackView.isLayoutMarginsRelativeArrangement = true
         return stackView
     }()
@@ -52,19 +52,19 @@ final class DeliveryDetailKPIContainerView: UIView {
         kpi.valueLabel.textColor = .white
         return kpi
     }
-    
+
     func set(requests: String) {
         requestsKPI.configure(with: PresentationConstants.Delivery.requestsTitle, and: requests)
     }
-    
+
     func set(price: String) {
         pledgeKPI.configure(with: PresentationConstants.Delivery.pledgeTitle, and: price)
     }
-    
+
     func set(weight: String) {
         weightKPI.configure(with: PresentationConstants.Delivery.weightTitle, and: weight)
     }
-    
+
     func setupContainerConstraints() {
         self.addSubview(containerStack)
         NSLayoutConstraint.activate([
@@ -72,15 +72,15 @@ final class DeliveryDetailKPIContainerView: UIView {
             containerStack.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             containerStack.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             containerStack.trailingAnchor.constraint(equalTo: self.trailingAnchor)
-        ])
+            ])
     }
-    
+
     func setContainerStack() {
         containerStack.addArrangedSubview(requestsKPI)
         containerStack.addArrangedSubview(pledgeKPI)
         containerStack.addArrangedSubview(weightKPI)
     }
-    
+
     func setupTheme() {
         let backgroundImage = UIImageView()
         backgroundImage.translatesAutoresizingMaskIntoConstraints = false
@@ -93,7 +93,7 @@ final class DeliveryDetailKPIContainerView: UIView {
             backgroundImage.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             backgroundImage.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             backgroundImage.heightAnchor.constraint(equalToConstant: Constants.height)
-        ])
+            ])
     }
 }
 

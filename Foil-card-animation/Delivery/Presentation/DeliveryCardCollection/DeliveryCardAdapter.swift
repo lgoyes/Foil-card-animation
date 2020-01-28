@@ -57,7 +57,7 @@ final class DeliveryCardAdapter: NSObject, UICollectionViewDataSource, UICollect
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         data[indexPath.row].type = data[indexPath.row].type.toggle()
-        collectionView.reloadData()
+        collectionView.reloadItems(at: [indexPath])
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {

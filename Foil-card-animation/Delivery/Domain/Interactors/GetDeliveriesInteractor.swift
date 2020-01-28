@@ -22,13 +22,24 @@ class GetDeliveriesInteractor: BaseInteractor<[DeliveryCardCellViewModel], Void>
     }
     
     override func buildUseCase() {
+        var dateComponents = DateComponents()
+        dateComponents.day = 28
+        dateComponents.month = 1
+        dateComponents.year = 2020
+        dateComponents.hour = 5
+        dateComponents.minute = 30
+        
+        guard let date = dateComponents.toDate() else {
+            fatalError("Invalid date")
+        }
+        
         let item = DeliveryCardCellViewModel(
             sourceAddress: Constants.sourceAddress,
             destinationAddress: Constants.destinationAddress,
             numberOfRequests: Constants.numberOfRequests,
             pedge: Constants.pedge,
             weight: Constants.weight,
-            deadline: Date(),
+            deadline: date,
             type: .master)
         
         onSuccess?(

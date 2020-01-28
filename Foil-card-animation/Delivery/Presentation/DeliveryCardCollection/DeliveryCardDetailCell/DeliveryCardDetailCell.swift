@@ -94,6 +94,7 @@ final class DeliveryCardDetailCell: BaseDeliveryCardCell {
 
     func overrideMainStack() {
         self.mainStackView.spacing = 0.0
+        self.mainStackView.distribution = .fill
     }
 
     override func prepareForReuse() {

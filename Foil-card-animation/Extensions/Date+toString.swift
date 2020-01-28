@@ -9,9 +9,9 @@
 import Foundation
 
 extension Date {
-    func toString(with format: String) -> String {
+    func toString(with formatString: String) -> String {
         let format = DateFormatter()
-        format.dateFormat = String(describing: format)
+        format.dateFormat = formatString
         return format.string(from: self)
     }
 }

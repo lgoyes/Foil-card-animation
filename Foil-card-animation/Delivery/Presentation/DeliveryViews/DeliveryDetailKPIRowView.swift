@@ -22,7 +22,7 @@ final class DeliveryDetailKPIRowView: UIView {
     
     let stackRow: UIStackView = {
         let stack = UIStackView()
-        stack.alignment = .center
+        stack.alignment = .top
         stack.distribution = .fillEqually
         stack.layoutMargins = UIEdgeInsets(top: Constants.verticalMargin, left: 0, bottom: Constants.verticalMargin, right: 0)
         stack.isLayoutMarginsRelativeArrangement = true
